@@ -1,8 +1,10 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {MsAdalAngular6Module} from 'microsoft-adal-angular6';
+
 
 @NgModule({
   declarations: [
@@ -10,9 +12,21 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MsAdalAngular6Module.forRoot({
+      tenant: '986902b9-ea53-4e21-9d19-293558bd3b13',
+      clientId: '9636634b-4013-4a0b-9fed-762639aaa80c',
+      redirectUri: 'http://localhost:4200/pages/dashboard',
+      endpoints: {
+        api: null,
+      },
+      navigateToLoginRequestUrl: false,
+      cacheLocation: '<localStorage / sessionStorage>',
+      postLogoutRedirectUri: 'http://localhost:4200/pages/dashboard',
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
