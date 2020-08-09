@@ -3,7 +3,6 @@ import {CommonModule} from '@angular/common';
 import {PagesRoutingModule} from './pages-routing.module';
 import {PagesComponent} from './pages.component';
 import {DashboardComponent} from '../dashboard/dashboard.component';
-import {HttpClient} from '@angular/common/http';
 
 
 @NgModule({

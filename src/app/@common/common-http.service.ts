@@ -6,9 +6,8 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
   providedIn: 'root'
 })
 export class CommonHttpService {
-  baseUrl = 'http://localhost:1337/';
-
-  // baseUrl = 'https://yoursketchwebappservice.azurewebsites.net';
+  // baseUrl = 'http://localhost:1337/';
+  baseUrl = 'https://yoursketchwebappservice.azurewebsites.net/';
 
   constructor(private http: HttpClient) {
   }

@@ -18,13 +18,13 @@ import {HttpClientModule} from '@angular/common/http';
     MsAdalAngular6Module.forRoot({
       tenant: '986902b9-ea53-4e21-9d19-293558bd3b13',
       clientId: '9636634b-4013-4a0b-9fed-762639aaa80c',
-      redirectUri: 'http://localhost:4200/pages/dashboard',
+      redirectUri: 'https://ysangularapp.azurewebsites.net/pages/dashboard',
       endpoints: {
         api: null,
       },
       navigateToLoginRequestUrl: false,
       cacheLocation: '<localStorage / sessionStorage>',
-      postLogoutRedirectUri: 'http://localhost:4200/pages/dashboard',
+      postLogoutRedirectUri: 'https://ysangularapp.azurewebsites.net/pages/dashboard',
     }),
   ],
   providers: [AuthenticationGuard],
