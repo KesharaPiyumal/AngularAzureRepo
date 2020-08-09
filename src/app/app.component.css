@@ -1,0 +1,14 @@
+.menu-item {
+  height: 70px;
+  border-bottom: 1px solid #c8d3dd;
+  color: #c8d3dd;
+}
+
+.menu-item:hover {
+  color: #5d6164 !important;
+  cursor: pointer;
+}
+
+.icon-menu {
+  font-size: 1.1rem;
+}

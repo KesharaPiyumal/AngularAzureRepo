@@ -1,0 +1,9 @@
+.fixed-pos-spin{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+}
+.disabled-opa{
+  opacity: 0.4;
+  pointer-events: none;
+}

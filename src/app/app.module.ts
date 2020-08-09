@@ -4,6 +4,7 @@ import {NgModule} from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {AuthenticationGuard, MsAdalAngular6Module} from 'microsoft-adal-angular6';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import {AuthenticationGuard, MsAdalAngular6Module} from 'microsoft-adal-angular6
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     MsAdalAngular6Module.forRoot({
       tenant: '986902b9-ea53-4e21-9d19-293558bd3b13',

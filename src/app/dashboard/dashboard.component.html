@@ -1,1 +1,29 @@
-<p>dashboard works!</p>
+<div class="container-fluid pt-3" [ngClass]="loading? 'disabled-opa': ''">
+  <div class="row">
+    <div class="col-md-12 mb-2">
+      <button class="btn btn-primary" (click)="getPersons()">Populate Data</button>
+    </div></div>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table">
+        <thead class="thead-light">
+        <tr>
+          <th scope="col" *ngFor="let h of cols;let i=index">{{h['label']}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let r of rows;let j=index">
+          <th scope="row">{{r['id']}}</th>
+          <td>{{r['firstName']}}</td>
+          <td>{{r['lastName']}}</td>
+          <td>{{r['age']}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="spinner-border text-primary fixed-pos-spin" role="status" *ngIf="loading">
+  <span class="sr-only">Loading...</span>
+</div>
