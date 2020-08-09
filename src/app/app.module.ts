@@ -3,7 +3,7 @@ import {NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {MsAdalAngular6Module} from 'microsoft-adal-angular6';
+import {AuthenticationGuard, MsAdalAngular6Module} from 'microsoft-adal-angular6';
 
 
 @NgModule({
@@ -25,7 +25,7 @@ import {MsAdalAngular6Module} from 'microsoft-adal-angular6';
       postLogoutRedirectUri: 'http://localhost:4200/pages/dashboard',
     }),
   ],
-  providers: [],
+  providers: [AuthenticationGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {
