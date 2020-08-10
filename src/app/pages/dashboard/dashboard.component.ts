@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {map} from 'rxjs/operators';
-import {PagesService} from '../pages/pages.service';
+import {PagesService} from '../pages.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,21 +10,14 @@ import {PagesService} from '../pages/pages.service';
 })
 export class DashboardComponent implements OnInit {
   loading = false;
-  cols = [{
-    label: '#'
-  }, {
-    label: 'First Name'
-  }, {
-    label: 'Last Name'
-  }, {
-    label: 'Age'
-  }];
+  cols = [{label: '#'}, {label: 'First Name'}, {label: 'Last Name'}, {label: 'Age'}];
   rows = [];
 
   constructor(private pagesService: PagesService) {
   }
 
   ngOnInit(): void {
+    this.getPersons();
   }
 
   getPersons() {
