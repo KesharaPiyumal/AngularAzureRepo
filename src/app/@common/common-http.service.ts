@@ -31,4 +31,11 @@ export class CommonHttpService {
         return response;
       }));
   }
+
+  getAllFunc(subUrl: string) {
+    return this.http.get<any>('https://appysfunc.azurewebsites.net/api/' + subUrl, {headers: this.getHttpHeaders()}).pipe(
+      map(response => {
+        return response;
+      }));
+  }
 }
