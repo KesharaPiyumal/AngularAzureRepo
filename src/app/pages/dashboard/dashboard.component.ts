@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {map} from 'rxjs/operators';
-import {PagesService} from '../pages.service';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { map } from 'rxjs/operators';
+import { PagesService } from '../pages.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,13 +10,12 @@ import {PagesService} from '../pages.service';
 })
 export class DashboardComponent implements OnInit {
   loading = false;
-  cols = [{label: '#'}, {label: 'First Name'}, {label: 'Last Name'}, {label: 'Age'}];
+  cols = [{ label: '#' }, { label: 'First Name' }, { label: 'Last Name' }, { label: 'Age' }];
   rows = [];
   imageFile: any;
   msg;
 
-  constructor(private pagesService: PagesService) {
-  }
+  constructor(private pagesService: PagesService) {}
 
   ngOnInit(): void {
     this.getPersons();
@@ -24,14 +23,17 @@ export class DashboardComponent implements OnInit {
 
   getPersons() {
     this.loading = true;
-    this.pagesService.getAllPersons().subscribe(response => {
-      this.loading = false;
-      if (response.statusCode === 200) {
-        this.rows = response.data;
+    this.pagesService.getAllPersons().subscribe(
+      response => {
+        this.loading = false;
+        if (response.statusCode === 200) {
+          this.rows = response.data;
+        }
+      },
+      error => {
+        this.loading = false;
       }
-    }, error => {
-      this.loading = false;
-    });
+    );
   }
 
   uploadFile(event: Event) {
@@ -48,6 +50,9 @@ export class DashboardComponent implements OnInit {
         this.loading = false;
         if (response) {
           this.msg = response.data;
+          setTimeout(() => {
+            this.msg = null;
+          }, 3500);
         }
       },
       error => {
