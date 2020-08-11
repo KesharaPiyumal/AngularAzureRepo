@@ -1,19 +1,21 @@
-import {RouterModule, Routes} from '@angular/router';
-import {NgModule} from '@angular/core';
-import {AuthenticationGuard} from 'microsoft-adal-angular6';
-import {PagesComponent} from './pages.component';
-import {DashboardComponent} from './dashboard/dashboard.component';
-import {StatsComponent} from './stats/stats.component';
+import { RouterModule, Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { AuthenticationGuard } from 'microsoft-adal-angular6';
+import { PagesComponent } from './pages.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { StatsComponent } from './stats/stats.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: PagesComponent,
-  }, {
+    component: PagesComponent
+  },
+  {
     path: 'dashboard',
     component: DashboardComponent,
     canActivate: [AuthenticationGuard]
-  }, {
+  },
+  {
     path: 'stats',
     component: StatsComponent,
     canActivate: [AuthenticationGuard]
@@ -24,5 +26,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class PagesRoutingModule {
-}
+export class PagesRoutingModule {}
