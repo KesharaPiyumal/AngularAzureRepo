@@ -47,7 +47,7 @@ export class DashboardComponent implements OnInit {
       response => {
         this.loading = false;
         if (response) {
-          this.msg = response;
+          this.msg = response.data;
         }
       },
       error => {
